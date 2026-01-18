@@ -168,7 +168,7 @@
     //
     // Here we enable them, but we do it within the #ifdef HAS_MOUSE_TP code
     // block, which prevents compilation and potential build errors when we
-    // undefine HAS_MOUSE_TP in corne_tp.keymap
+    // undefine HAS_MOUSE_TP in chillu_omni.keymap
     &mouse_ps2  {
       status = "okay";
     };

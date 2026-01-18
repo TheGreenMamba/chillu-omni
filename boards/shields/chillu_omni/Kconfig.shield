@@ -1,0 +1,8 @@
+# Copyright (c) 2020 Pete Johanson
+# SPDX-License-Identifier: MIT
+
+config SHIELD_CHILLU_OMNI_LEFT
+    def_bool $(shields_list_contains,chillu_omni_left)
+
+config CHILLU_OMNI_RIGHT
+    def_bool $(shields_list_contains,chillu_omni_right)
