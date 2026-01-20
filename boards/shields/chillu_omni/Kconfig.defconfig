@@ -17,6 +17,18 @@ config ZMK_KEYBOARD_NAME
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
+# config CONFIG_ZMK_SPLIT_CENTRAL_SCAN
+# 	default y
+
+endif
+
+if SHIELD_CHILLU_OMNI_RIGHT
+
+# config ZMK_SPLIT_ROLE_PERIPHERAL
+#     default y
+# config CONFIG_ZMK_SPLIT_PERIPHERAL_ADVERTISE
+# 	default y
+
 endif
 
 # Options that should be enabled on both sides
