@@ -12,7 +12,7 @@
 if SHIELD_CHILLU_OMNI_RIGHT
 
 config ZMK_KEYBOARD_NAME
-    default "Chillu Omni"
+    default "ChillU Omni"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
