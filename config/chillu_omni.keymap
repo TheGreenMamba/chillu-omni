@@ -58,6 +58,24 @@
 
 // Disable line-wrap in your editor to see a "visualization" of the key layouts
 / {
+  combos {
+    compatible = "zmk,combos";
+      combo_backspace {
+        timeout-ms = <50>;
+        key-positions = <8 9>;
+        bindings = <&kp BACKSPACE>;
+      };
+      combo_enter {
+        timeout-ms = <50>;
+        key-positions = <20 21>;
+        bindings = <&kp ENTER>;
+      };
+      combo_del {
+        timeout-ms = <50>;
+        key-positions = <32 33>;
+        bindings = <&kp DEL>;
+      };
+  };
 
   keymap {
     compatible = "zmk,keymap";
