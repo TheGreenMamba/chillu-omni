@@ -19,6 +19,14 @@ config ZMK_SPLIT_ROLE_CENTRAL
 
 endif
 
+if SHIELD_CHILLU_OMNI_LEFT
+config ZMK_SPLIT_ROLE_CENTRAL
+    default n
+config ZMK_USB
+    default n
+
+endif
+
 # Options that should be enabled on both sides
 if SHIELD_CHILLU_OMNI_LEFT || SHIELD_CHILLU_OMNI_RIGHT
 
