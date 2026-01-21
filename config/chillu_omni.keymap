@@ -9,7 +9,7 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define BASE 0
-#define LOWER 1
+#define SYMBOLS 1
 #define MOUSE_KEYS 2
 #define MOUSE_TP 3
 #define MOUSE_TP_SET 4
@@ -80,36 +80,36 @@
   keymap {
     compatible = "zmk,keymap";
 
-    Base_layer {
-      display-name = "Base";
+    base_layer {
+      display-name = "base";
       bindings = <
 // ╭────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────╮    ╭────────────────────────┬────────────────────────┬────────────────────────┬───────────────────────┬────────────────────────┬────────────────────────╮
-     &kp TAB                  &kp Q                    &kp W                    &kp E                    &kp R                    &kp T                         &kp Z                    &kp U                    &kp I                    &kp O                    &kp P                    &kp LEFT_BRACKET
+     &kp TAB                  &kp Q                    &kp W                    &kp E                    &kp R                    &kp T                         &kp Y                    &kp U                    &kp I                    &kp O                    &kp P                    &kp LEFT_BRACKET
 // ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼───────────────────────┼────────────────────────┼────────────────────────┤
      &kp LCTRL                &kp A                    &kp S                    &kp D                    &kp F                    &kp G                         &kp H                    &kp J                    &kp K                    &kp L                    &kp SEMICOLON            &kp SINGLE_QUOTE
 // ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼───────────────────────┼────────────────────────┼────────────────────────┤
-     &kp LSHFT                &kp Y                    &kp X                    &kp C                    &kp V                    &kp B                         &kp N                    &kp M                    &kp COMMA                &kp DOT                  &kp SLASH                &kp ESC
+     &kp LSHFT                &kp Z                    &kp X                    &kp C                    &kp V                    &kp B                         &kp N                    &kp M                    &kp COMMA                &kp DOT                  &kp MINUS                &kp ESC
 // ╰────────────────────────┴────────────────────────┴────────────────────────┴────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼───────────────────────┼────────────────────────┼────────────────────────╯
-                                                       &mo LOWER                &mo LOWER                &kp LALT                 &kp SPACE                     &kp SPACE                &mo LOWER                &mo LOWER                &mo LOWER
+                                                       &mo SYMBOLS              &mo SYMBOLS              &kp LALT                 &kp SPACE                     &kp SPACE                &mo SYMBOLS              &mo SYMBOLS              &mo SYMBOLS
 //                                                                            ╰────────────────────────┴────────────────────────┴────────────────────────╯    ╰────────────────────────┴────────────────────────┴────────────────────────╯
-                                                                                &mo LOWER                &kp SPACE                U_THUMB_INNER                 &mkp LCLK                &mkp MCLK                &mkp RCLK
+                                                                                &mo SYMBOLS              &kp SPACE                U_THUMB_INNER                 &mkp LCLK                &mkp MCLK                &mkp RCLK
 //                                                                            ╰────────────────────────┴────────────────────────┴────────────────────────╯    ╰────────────────────────┴────────────────────────┴────────────────────────╯
 
       >;
     };
 
 
-    Lower_layer {
-      display-name = "Lower";
+    symbol_layer {
+      display-name = "symbols";
       bindings = <
 // ╭────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────╮    ╭────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────╮
-     &trans                   &kp NUMBER_1             &kp NUMBER_2             &kp NUMBER_3             &kp NUMBER_4             &kp NUMBER_5                  &kp NUMBER_6             &kp NUMBER_7             &kp NUMBER_8             &kp NUMBER_9             &kp NUMBER_0              &trans
+     &kp AT_SIGN              &kp AT_SIGN              &kp EXCLAMATION          &kp LEFT_BRACKET         &kp RIGHT_BRACKET        &kp TILDE                     &kp BACKSLASH            &kp ASTERISK             &kp SLASH                &kp EQUAL                &kp GRAVE                 &kp QUESTION
 // ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤
-     &trans                   &kp EXCLAMATION          &kp AT_SIGN              &kp HASH                 &kp DOLLAR               &kp PERCENT                   &kp CARET                &kp AMPERSAND            &kp ASTERISK             &kp LEFT_PARENTHESIS     &kp RIGHT_PARENTHESIS     &trans
+     &trans                   &kp DOUBLE_QUOTES        &kp SINGLE_QUOTE         &kp LEFT_PARENTHESIS     &kp RIGHT_PARENTHESIS    &kp PERCENT                   &kp LEFT                 &kp DOWN                 &kp UP                   &kp RIGHT                &kp RIGHT_PARENTHESIS     &kp NON_US_HASH
 // ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤
-     &trans                   &kp EQUAL                &kp MINUS                &kp PLUS                 &kp LEFT_BRACE           &kp RIGHT_BRACE               &kp LEFT_BRACKET         &kp RIGHT_BRACKET        &kp SEMICOLON            &kp COLON                &kp BACKSLASH             &trans
+     &trans                   &kp PIPE                 &kp CARET                &kp LEFT_BRACE           &kp RIGHT_BRACE          &kp AMPERSAND                 &kp PLUS                 &kp DOLLAR               &kp SEMICOLON            &kp COLON                &kp BACKSLASH             &trans
 // ╰────────────────────────┴────────────────────────┴────────────────────────┴────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┴────────────────────────┼────────────────────────╯
-                                                       &trans                   &trans                   &kp UNDERSCORE           &kp TILDE                     &trans                    &trans                  &trans                   &trans
+                                                       &kp PIPE                 &kp LESS_THAN            &kp UNDERSCORE           &kp TILDE                     &trans                    &trans                  &kp GREATER_THAN         &trans
 //                                                                            ╰────────────────────────┴────────────────────────┴────────────────────────╯    ╰────────────────────────┴────────────────────────┴────────────────────────╯
                                                                                 &trans                   &kp UNDERSCORE           &kp TILDE                     &mkp LCLK                &mkp MCLK                &mkp RCLK
 //                                                                            ╰────────────────────────┴────────────────────────┴────────────────────────╯    ╰────────────────────────┴────────────────────────┴────────────────────────╯
