@@ -5,9 +5,14 @@
  */
 
 #include <dt-bindings/zmk/matrix_transform.h>
-#include <physical_layouts.dtsi>
 
 / {
+	key_physical_attrs: key_physical_attrs {
+        compatible = "zmk,key-physical-attrs";
+
+        #key-cells = <7>;
+    };
+
     chosen {
         zmk,kscan = &kscan0;
 		zmk,physical-layout = &physical_layout_0;
