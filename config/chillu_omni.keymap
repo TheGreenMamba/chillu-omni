@@ -78,6 +78,10 @@
       };
   };
 
+  key_repeat {
+      trigger-period-ms = <17>;  // ~60/sec rate
+  };
+
   keymap {
     compatible = "zmk,keymap";
 
