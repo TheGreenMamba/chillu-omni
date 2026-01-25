@@ -91,22 +91,6 @@
 
   };
 
-  macros {
-    send_ohm: send_ohm {
-      compatible = "zmk,behavior-macro";
-      #binding-cells = <0>;
-      wait-ms = <10>; // Adds a tiny gap to ensure OS registers modifiers
-      tap-ms = <10>;
-      bindings = <
-        &macro_press   &kp RALT
-        &macro_press   &kp LSHFT
-        &macro_tap     &kp Q
-        &macro_release &kp LSHFT
-        &macro_release &kp RALT
-      >;
-    };
-  };
-
   keymap {
     compatible = "zmk,keymap";
 
@@ -151,7 +135,7 @@
       display-name = "numbers";
       bindings = <
 // ╭────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────╮    ╭────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────╮
-     &kp AT_SIGN              &kp DE_SLASH             &kp DE_N1                &kp DE_N2                &kp DE_N3                &kp DE_MINUS                  &kp DE_BACKSLASH         &kp DE_ASTERISK          &kp DE_MU                &kp DE_EQUAL             &kp DE_GRAVE              &kp DE_SHARP_S
+     &kp AT_SIGN              &kp DE_SLASH             &kp DE_N1                &kp DE_N2                &kp DE_N3                &kp DE_MINUS                  &kp DE_BACKSLASH         &kp DE_ASTERISK          &kp RA(M)                &kp DE_EQUAL             &kp DE_GRAVE              &kp DE_SHARP_S
 // ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤
      &trans                   &kp DE_ASTERISK          &kp DE_N4                &kp DE_N5                &kp DE_N6                &kp DE_PLUS                   &kp LEFT                 &kp DOWN                 &kp UP                   &kp RIGHT                &kp DE_HASH               &kp DE_HASH
 // ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤
