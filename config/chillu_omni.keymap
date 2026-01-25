@@ -89,15 +89,21 @@
       bindings = <&mo>, <&kp>;
     };
 
-	send_ohm: send_ohm {
-        compatible = "zmk,behavior-macro";
-        label = "OHM";
-        #binding-cells = <0>;
-        bindings = <
-            &macro_press   &kp RALT   // AltGr
-            &kp DE_Z
-            &macro_release &kp RALT
-        >;
+  };
+
+  macros {
+    send_ohm: send_ohm {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      wait-ms = <10>; // Adds a tiny gap to ensure OS registers modifiers
+      tap-ms = <10>;
+      bindings = <
+        &macro_press   &kp RALT
+        &macro_press   &kp LSHFT
+        &macro_tap     &kp Q
+        &macro_release &kp LSHFT
+        &macro_release &kp RALT
+      >;
     };
   };
 
@@ -116,7 +122,7 @@
 // ╰────────────────────────┴────────────────────────┴────────────────────────┴────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼───────────────────────┼────────────────────────┼────────────────────────╯
 											    	   &kp DE_PIPE              &kp DE_LESS_THAN         &mo NUMBERS              &kp LALT                      &kp SPACE                &mo SYMBOLS              &kp DE_GREATER_THAN      &kp DE_SHARP_S
 //                                                                            ╰────────────────────────┴────────────────────────┴────────────────────────╯    ╰────────────────────────┴────────────────────────┴────────────────────────╯
-                                                                                &mo_kp SYSTEM K_MUTE     &kp K_VOL_DN              &kp K_VOL_UP                  &mkp LCLK                &mkp MCLK                &mkp RCLK
+                                                                                &mo_kp SYSTEM K_MUTE     &kp K_VOL_DN             &kp K_VOL_UP                  &mkp LCLK                &mkp MCLK                &mkp RCLK
 //                                                                            ╰────────────────────────┴────────────────────────┴────────────────────────╯    ╰────────────────────────┴────────────────────────┴────────────────────────╯
 
       >;
@@ -127,15 +133,15 @@
       display-name = "symbols";
       bindings = <
 // ╭────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────╮    ╭────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────╮
-     &kp DE_AT_SIGN           &kp DE_AT_SIGN           &kp DE_EXCLAMATION       &kp DE_LEFT_BRACKET      &kp DE_RIGHT_BRACKET     &kp DE_TILDE                  &kp DE_BACKSLASH         &kp DE_ASTERISK          &kp DE_SLASH             &kp DE_EQUAL             &kp DE_GRAVE              &kp PRINTSCREEN
+     &kp DE_AT_SIGN           &kp DE_AT_SIGN           &kp DE_EXCLAMATION       &kp DE_LEFT_BRACKET      &kp DE_RIGHT_BRACKET     &kp DE_TILDE                  &kp DE_BACKSLASH         &kp DE_ASTERISK          &kp DE_SLASH             &kp DE_EQUAL             &kp DE_GRAVE              &kp DE_QUESTION
 // ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤
      &kp DE_EURO              &kp DE_DOUBLE_QUOTES     &kp DE_SINGLE_QUOTE      &kp DE_LEFT_PARENTHESIS  &kp DE_RIGHT_PARENTHESIS &kp PERCENT                   &kp LEFT                 &kp DOWN                 &kp UP                   &kp RIGHT                &kp DE_HASH               &kp DE_HASH
 // ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤
-     &kp DE_DEGREE            &kp DE_PIPE              &kp DE_CARET             &kp DE_LEFT_BRACE        &kp DE_RIGHT_BRACE       &kp DE_AMPERSAND              &kp DE_PLUS              &kp DE_DOLLAR            &kp COMMA                &kp DOT                  &kp DE_BACKSLASH          &kp RSHIFT
+     &kp DE_DEGREE            &kp DE_PIPE              &kp DE_CARET             &kp DE_LEFT_BRACE        &kp DE_RIGHT_BRACE       &kp DE_AMPERSAND              &kp DE_PLUS              &kp DE_DOLLAR            &trans                   &kp PRINTSCREEN          &kp DE_BACKSLASH          &kp RSHIFT
 // ╰────────────────────────┴────────────────────────┴────────────────────────┴────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┴────────────────────────┼────────────────────────╯
-                                                       &kp DE_PIPE              &kp DE_LESS_THAN         &kp UNDERSCORE           &kp TILDE                     &trans                   &trans                   &trans                   &send_ohm
+                                                       &trans                   &trans                   &trans                   &trans                        &trans                   &trans                   &trans                   &kp RA(LS(Q))
 //                                                                            ╰────────────────────────┴────────────────────────┴────────────────────────╯    ╰────────────────────────┴────────────────────────┴────────────────────────╯
-                                                                                &trans                   &kp UNDERSCORE           &kp TILDE                     &mkp LCLK                &mkp MCLK                &mkp RCLK
+                                                                                &trans                   &trans                   &trans                        &trans                   &trans                   &trans
 //                                                                            ╰────────────────────────┴────────────────────────┴────────────────────────╯    ╰────────────────────────┴────────────────────────┴────────────────────────╯
       >;
     };
@@ -151,9 +157,9 @@
 // ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤
      &trans                   &kp DE_PIPE              &kp DE_N7                &kp DE_N8                &kp DE_N9                &kp DE_N0                     &kp DE_PLUS              &kp DE_DOLLAR            &kp COMMA                &kp DOT                  &kp DE_BACKSLASH          &trans
 // ╰────────────────────────┴────────────────────────┴────────────────────────┴────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┴────────────────────────┼────────────────────────╯
-                                                       &kp COMMA                &kp DOT                  &kp UNDERSCORE           &kp TILDE                     &kp SPACE                &trans                   &trans                   &trans
+                                                       &kp COMMA                &kp DOT                  &trans                   &trans                        &trans                   &trans                   &trans                   &trans
 //                                                                            ╰────────────────────────┴────────────────────────┴────────────────────────╯    ╰────────────────────────┴────────────────────────┴────────────────────────╯
-                                                                                &trans                   &kp UNDERSCORE           &kp TILDE                     &mkp LCLK                &mkp MCLK                &mkp RCLK
+                                                                                &trans                   &trans                   &trans                        &trans                   &trans                   &trans
 //                                                                            ╰────────────────────────┴────────────────────────┴────────────────────────╯    ╰────────────────────────┴────────────────────────┴────────────────────────╯
       >;
     };
