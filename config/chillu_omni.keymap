@@ -63,19 +63,34 @@
 / {
   combos {
     compatible = "zmk,combos";
-      combo_backspace {
+      combo_backspace_right {
         timeout-ms = <50>;
         key-positions = <8 9>;
         bindings = <&kp BACKSPACE>;
       };
-      combo_enter {
+      combo_enter_right {
         timeout-ms = <50>;
         key-positions = <20 21>;
         bindings = <&kp ENTER>;
       };
-      combo_del {
+      combo_del_right {
         timeout-ms = <50>;
         key-positions = <32 33>;
+        bindings = <&kp DEL>;
+      };
+      combo_backspace_left {
+        timeout-ms = <50>;
+        key-positions = <2 3>;
+        bindings = <&kp BACKSPACE>;
+      };
+      combo_enter_left {
+        timeout-ms = <50>;
+        key-positions = <14 15>;
+        bindings = <&kp ENTER>;
+      };
+      combo_del_left {
+        timeout-ms = <50>;
+        key-positions = <26 27>;
         bindings = <&kp DEL>;
       };
   };
@@ -117,7 +132,7 @@
       display-name = "symbols";
       bindings = <
 // ╭────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────╮    ╭────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────╮
-     &kp DE_AT_SIGN           &kp DE_AT_SIGN           &kp DE_EXCLAMATION       &kp DE_LEFT_BRACKET      &kp DE_RIGHT_BRACKET     &kp DE_TILDE                  &kp DE_BACKSLASH         &kp DE_ASTERISK          &kp DE_SLASH             &kp DE_EQUAL             &kp DE_GRAVE              &kp DE_QUESTION
+     &kp DE_AT_SIGN           &kp DE_AT_SIGN           &kp DE_EXCLAMATION       &kp DE_LEFT_BRACKET      &kp DE_RIGHT_BRACKET     &kp DE_TILDE                  &kp DE_BACKSLASH         &kp DE_ASTERISK          &kp DE_SLASH             &kp DE_GRAVE             &kp DE_EQUAL              &kp DE_QUESTION
 // ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤
      &kp DE_EURO              &kp DE_DOUBLE_QUOTES     &kp DE_SINGLE_QUOTE      &kp DE_LEFT_PARENTHESIS  &kp DE_RIGHT_PARENTHESIS &kp PERCENT                   &kp LEFT                 &kp DOWN                 &kp UP                   &kp RIGHT                &kp DE_HASH               &kp DE_HASH
 // ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤
@@ -135,11 +150,11 @@
       display-name = "numbers";
       bindings = <
 // ╭────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────╮    ╭────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────╮
-     &kp AT_SIGN              &kp DE_SLASH             &kp DE_N1                &kp DE_N2                &kp DE_N3                &kp DE_MINUS                  &kp DE_BACKSLASH         &kp DE_ASTERISK          &kp RA(M)                &kp DE_EQUAL             &kp DE_GRAVE              &kp DE_SHARP_S
+     &kp TAB                  &kp DE_SLASH             &kp DE_N1                &kp DE_N2                &kp DE_N3                &kp DE_MINUS                  &kp DE_BACKSLASH         &kp DE_ASTERISK          &kp RA(M)                &kp DE_EQUAL             &kp DE_GRAVE              &kp DE_SHARP_S
 // ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤
-     &trans                   &kp DE_ASTERISK          &kp DE_N4                &kp DE_N5                &kp DE_N6                &kp DE_PLUS                   &kp LEFT                 &kp DOWN                 &kp UP                   &kp RIGHT                &kp DE_HASH               &kp DE_HASH
+     &mt LCTRL ESC            &kp DE_ASTERISK          &kp DE_N4                &kp DE_N5                &kp DE_N6                &kp DE_PLUS                   &kp LEFT                 &kp DOWN                 &kp UP                   &kp RIGHT                &kp DE_HASH               &kp DE_HASH
 // ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤
-     &trans                   &kp DE_PIPE              &kp DE_N7                &kp DE_N8                &kp DE_N9                &kp DE_N0                     &kp DE_PLUS              &kp DE_DOLLAR            &kp COMMA                &kp DOT                  &kp DE_BACKSLASH          &trans
+     &kp LC(Y)                &kp LC(Y)                &kp DE_N7                &kp DE_N8                &kp DE_N9                &kp DE_N0                     &kp DE_PLUS              &kp DE_DOLLAR            &kp COMMA                &kp DOT                  &kp DE_BACKSLASH          &trans
 // ╰────────────────────────┴────────────────────────┴────────────────────────┴────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┴────────────────────────┼────────────────────────╯
                                                        &kp COMMA                &kp DOT                  &trans                   &trans                        &trans                   &trans                   &trans                   &trans
 //                                                                            ╰────────────────────────┴────────────────────────┴────────────────────────╯    ╰────────────────────────┴────────────────────────┴────────────────────────╯
